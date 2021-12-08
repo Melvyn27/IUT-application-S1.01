@@ -41,6 +41,6 @@ int main()
   printf("%d \n", function());
 
    char c='\0'; // or c=0; //code ASCII
-    
+
     return 0;
 }
