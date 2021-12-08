@@ -1,6 +1,69 @@
-//
-// Created by Melvyn Delpree on 25/11/2021.
-//
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#define chemin "annuaire_numerique.csv"
+/*
 
-int main{
-printf("test")}
+typedef struct abonne
+{
+    char nom[20];
+    char prenom[20];
+    char adresse[20];
+    char numTel[16];
+    char adresseMail[50];
+    char profession[20];
+} ABONNE;*/
+
+
+
+
+
+typedef struct abonne
+{
+    char nom[20];
+    char prenom[20];
+    char adresse[30];
+    char numTel[20];
+    char adresseMail[20];
+    char profession[20];
+} ABONNE;
+
+int function()
+{
+  static int count = 0;
+  count++;
+  return count;
+}
+
+int main()
+{
+  printf("%d ", function());
+  printf("%d \n", function());
+
+   char c='\0'; // or c=0; //code ASCII
+
+  FILE* fic ;
+    char tuple[130];
+    ABONNE personne;
+    int nb_personnes=0;
+
+    fic = fopen(chemin, "r") ;
+    if (fic==NULL)
+    {
+        puts("Pb d'ouverture du fichier annuaire !");
+        exit(0);
+    }
+
+     while (fgets(tuple, 130, fic) != NULL){
+
+    // Returns first token
+    char* token = strtok(tuple, ",");
+
+    // Keep printing tokens while one of the delimiters present in tuple.
+    while (token != NULL) {
+        printf("%s\n", token);
+        token = strtok(NULL, ",");
+    }
+     }
+    return 0;
+}
