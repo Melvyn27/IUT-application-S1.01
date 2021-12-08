@@ -41,29 +41,6 @@ int main()
   printf("%d \n", function());
 
    char c='\0'; // or c=0; //code ASCII
-
-  FILE* fic ;
-    char tuple[130];
-    ABONNE personne;
-    int nb_personnes=0;
-
-    fic = fopen(chemin, "r") ;
-    if (fic==NULL)
-    {
-        puts("Pb d'ouverture du fichier annuaire !");
-        exit(0);
-    }
-
-     while (fgets(tuple, 130, fic) != NULL){
-
-    // Returns first token
-    char* token = strtok(tuple, ",");
-
-    // Keep printing tokens while one of the delimiters present in tuple.
-    while (token != NULL) {
-        printf("%s\n", token);
-        token = strtok(NULL, ",");
-    }
-     }
+    
     return 0;
 }
