@@ -1,5 +1,5 @@
-//#include <stdlib.h>
-//#include <string.h>
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 #define chemin "annuaire_numerique.csv"
 
@@ -15,15 +15,17 @@ typedef struct abonne
 
 int function()
 {
-  static int count = 0;
-  count++;
-  return count;
+    FILE* fichier = fopen(chemin, "r");
+    if (fichier == NULL){
+        printf("\nFichier introuvable\n");
+        int fclose(FILE *flux);
+        return 0;}
+    printf(fichier);
+        int fclose(FILE *flux);
+    return 1;
 }
 
 int main()
 {
-  printf("%d ", function());
-  printf("%d \n", function());
-
     return 0;
 }
