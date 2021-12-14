@@ -5,14 +5,14 @@
 
 typedef struct abonne
 {
-    char nom[20];
     char prenom[20];
     char adresse[30];
+    char nom[20];
     char numTel[20];
     char adresseMail[20];
     char profession[20];
 } ABONNE;
-
+/*
 int function()
 {
     FILE* fichier = fopen(chemin, "r");
@@ -24,8 +24,12 @@ int function()
         int fclose(FILE *flux);
     return 1;
 }
-
+*/
 int main()
 {
+    struct abonne test = {"Melvyn", "Delpree", "Villes, 01200", "06 00 00 00 00", "melvyn2701@gmail.com", "etudiant"};
+    affiche();
+    add_client("nom", "prenom", "", )
+
     return 0;
 }
