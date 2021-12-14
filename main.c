@@ -25,12 +25,5 @@ int main()
   printf("%d ", function());
   printf("%d \n", function());
 
-<<<<<<< Updated upstream
-   char c='\0'; // or c=0; //code ASCII
-
-=======
-   //char c='\0'; // or c=0; //code ASCII
-    
->>>>>>> Stashed changes
     return 0;
 }
