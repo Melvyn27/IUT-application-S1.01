@@ -25,11 +25,18 @@ int function()
     return 1;
 }
 */
+
+int affiche (var){
+printf("%c", test.nom);
+printf("%c", test.prenom);
+return 1;
+}
+
+
 int main()
 {
     struct abonne test = {"Melvyn", "Delpree", "Villes, 01200", "06 00 00 00 00", "melvyn2701@gmail.com", "etudiant"};
     affiche();
-    add_client("nom", "prenom", "", )
 
     return 0;
 }
