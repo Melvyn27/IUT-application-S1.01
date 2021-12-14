@@ -2,21 +2,6 @@
 #include <string.h>
 #include <stdio.h>
 #define chemin "annuaire_numerique.csv"
-/*
-
-typedef struct abonne
-{
-    char nom[20];
-    char prenom[20];
-    char adresse[20];
-    char numTel[16];
-    char adresseMail[50];
-    char profession[20];
-} ABONNE;*/
-
-
-
-
 
 typedef struct abonne
 {
