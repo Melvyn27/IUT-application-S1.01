@@ -1,5 +1,5 @@
-#include <stdlib.h>
-#include <string.h>
+//#include <stdlib.h>
+//#include <string.h>
 #include <stdio.h>
 #define chemin "annuaire_numerique.csv"
 
@@ -25,7 +25,12 @@ int main()
   printf("%d ", function());
   printf("%d \n", function());
 
+<<<<<<< Updated upstream
    char c='\0'; // or c=0; //code ASCII
 
+=======
+   //char c='\0'; // or c=0; //code ASCII
+    
+>>>>>>> Stashed changes
     return 0;
 }
