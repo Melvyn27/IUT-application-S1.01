@@ -28,7 +28,7 @@ int function()
 
 void affiche(struct abonne client[]){
 int i;
-for (i=0; i<sizeof*(client); i++){
+for (i=0; i<sizeof(client); i++){
 printf("%s, ", client[i].prenom);
 printf("%s, ", client[i].nom);
 printf("%s, ", client[i].adresse);
@@ -87,10 +87,16 @@ void remplirClient(char prenom[20], char nom[20], char adresse[40], char numTel[
     setDonnee(profession, 5, client, n);
 }
 
+void modifieClient(char donnee[], int type, struct abonne client[], int n){
+    setDonnee(donnee, type, client, n);
+}
+
 int main()
 {
 struct abonne client[5];
 remplirClient("Melvyn","Delpree","Villes","0000000000","melvyn2701@gmail.com","etudiant", client, 0);
+affiche(client);
+modifieClient("Luka", 0, client, 0);
 affiche(client);
 return 0;
 }
