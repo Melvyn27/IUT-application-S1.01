@@ -7,9 +7,9 @@ typedef struct abonne
 {
     char prenom[20];
     char nom[20];
-    char adresse[20];
+    char adresse[40];
     char numTel[20];
-    char adresseMail[20];
+    char adresseMail[50];
     char profession[20];
 } ABONNE;
 /*
