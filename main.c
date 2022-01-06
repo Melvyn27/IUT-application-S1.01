@@ -7,9 +7,9 @@ typedef struct abonne
 {
     char prenom[20];
     char nom[20];
-    char adresse[20];
+    char adresse[40];
     char numTel[20];
-    char adresseMail[20];
+    char adresseMail[50];
     char profession[20];
 } ABONNE;
 /*
@@ -73,6 +73,45 @@ void remplirClient(char prenom[20], char nom[20], char adresse[20], char numTel[
         mot = mot+1;}
         mot=0;
     }
+
+void add_client(){
+
+    char nom[20];
+    char prenom[30];
+    char adresse[40];
+    char numTel[20];
+    char adresseMail[50];
+    char profession[20];
+
+    char rep;
+
+    do{
+        fflush(stdin);
+        printf("Entrer le nom :\n");
+        scanf("%s", &nom);
+        printf("Entrer le prenom :\n");
+        gets(prenom);
+        printf("Entrer la adresse :\n");
+        gets(adresse);
+        printf("Entrer le numero de telephone :\n");
+        gets(numTel);
+        printf("Entrer l'adresse mail :\n");
+        gets(adresseMail);
+        printf("Entrer la profession :\n");
+        gets(profession);
+
+        FILE*add_abonnee = NULL;
+        add_abonnee=fopen("annuaire_numerique.csv","a");
+        fprintf(add_abonnee,"%s,%s,%s,%s,%s,%s\n", nom, prenom, adresse, numTel, adresseMail, profession);
+        fclose(add_abonnee);
+
+        printf("\n Voulez-vous effectuer d'autre enregistrement ? Oui(O) / Non(N)\n");
+        scanf("%s", &rep);
+        printf("\n");
+    } while (rep=='O'||rep=='o'||rep=='Oui'||rep=='oui');
+
+}
+
 
 int main()
 {
