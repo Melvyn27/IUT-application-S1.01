@@ -20,3 +20,4 @@ void setDonnee(char donnee[], int type, struct abonne client[], int n);
 void remplirClient(char prenom[20], char nom[20], char adresse[40], char numTel[20], char adresseMail[50], char profession[20], struct abonne client[], int n);
 void modifieClient(char donnee[], int type, struct abonne client[], int n);
 int recherche(struct abonne client[], char prenom[]);
+int openFile(char chemin[]);
