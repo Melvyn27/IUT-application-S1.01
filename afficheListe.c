@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 #include "header.h"
 
 void affiche(struct abonne client[]){
