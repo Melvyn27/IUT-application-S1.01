@@ -1,12 +1,31 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+<<<<<<< HEAD
 #include "header.h"
 #define chemin "annuaire_numerique.csv"
 
 
 /*
 int function()
+=======
+
+typedef struct abonne
+{
+    char prenom[20];
+    char nom[20];
+    char adresse[40];
+    char numTel[20];
+    char adresseMail[50];
+    char profession[20];
+} ABONNE;
+
+
+void triListe (struct abonne client[]){
+printf("\nliste trié");}
+
+int openFile(char chemin[])
+>>>>>>> file
 {
     FILE* fichier = fopen(chemin, "r");
     if (fichier == NULL){
@@ -17,8 +36,25 @@ int function()
         int fclose(FILE *flux);
     return 1;
 }
-*/
 
+<<<<<<< HEAD
+=======
+
+void affiche(struct abonne client[], int tri){
+if (tri == 1) triListe(client);
+int i;
+printf("\n\n");
+for (i=0; i<sizeof(client); i++){
+printf("%s, ", client[i].prenom);
+printf("%s, ", client[i].nom);
+printf("%s, ", client[i].adresse);
+printf("%s, ", client[i].numTel);
+printf("%s, ", client[i].adresseMail);
+printf("%s\n", client[i].profession);
+}
+}
+
+>>>>>>> file
 void setDonnee(char donnee[], int type, struct abonne client[], int n){
     int mot = 0;
     if (type == 0){
@@ -68,10 +104,17 @@ void remplirClient(char prenom[20], char nom[20], char adresse[40], char numTel[
     setDonnee(profession, 5, client, n);
 }
 
+void modifieClient(char donnee[], int type, struct abonne client[], int n){
+    setDonnee(donnee, type, client, n);
+}
+
 int main()
 {
 struct abonne client[5];
 remplirClient("Melvyn","Delpree","Villes","0000000000","melvyn2701@gmail.com","etudiant", client, 0);
-affiche(client);
+affiche(client, 0);
+modifieClient("Luka", 0, client, 0);
+affiche(client, 1);
+printf("%d",openFile("annuaire_numerique.csv"));
 return 0;
 }
