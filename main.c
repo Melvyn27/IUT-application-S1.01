@@ -13,6 +13,9 @@ typedef struct abonne
 } ABONNE;
 
 
+void triListe (struct abonne client[]){
+printf("\nliste trié");}
+
 int openFile(char chemin[])
 {
     FILE* fichier = fopen(chemin, "r");
@@ -26,8 +29,10 @@ int openFile(char chemin[])
 }
 
 
-void affiche(struct abonne client[]){
+void affiche(struct abonne client[], int tri){
+if (tri == 1) triListe(client);
 int i;
+printf("\n\n");
 for (i=0; i<sizeof(client); i++){
 printf("%s, ", client[i].prenom);
 printf("%s, ", client[i].nom);
@@ -95,9 +100,9 @@ int main()
 {
 struct abonne client[5];
 remplirClient("Melvyn","Delpree","Villes","0000000000","melvyn2701@gmail.com","etudiant", client, 0);
-affiche(client);
+affiche(client, 0);
 modifieClient("Luka", 0, client, 0);
-affiche(client);
+affiche(client, 1);
 printf("%d",openFile("annuaire_numerique.csv"));
 return 0;
 }
