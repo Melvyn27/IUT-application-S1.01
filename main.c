@@ -1,17 +1,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include "header.h"
 #define chemin "annuaire_numerique.csv"
 
-typedef struct abonne
-{
-    char prenom[20];
-    char nom[20];
-    char adresse[40];
-    char numTel[20];
-    char adresseMail[50];
-    char profession[20];
-} ABONNE;
+
 /*
 int function()
 {
@@ -25,18 +18,6 @@ int function()
     return 1;
 }
 */
-
-void affiche(struct abonne client[]){
-int i;
-for (i=0; i<sizeof*(client); i++){
-printf("%s, ", client[i].prenom);
-printf("%s, ", client[i].nom);
-printf("%s, ", client[i].adresse);
-printf("%s, ", client[i].numTel);
-printf("%s, ", client[i].adresseMail);
-printf("%s\n", client[i].profession);
-}
-}
 
 void setDonnee(char donnee[], int type, struct abonne client[], int n){
     int mot = 0;
