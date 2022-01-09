@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#define chemin "annuaire_numerique.csv"
 
 typedef struct abonne
 {
@@ -14,7 +13,7 @@ typedef struct abonne
 } ABONNE;
 
 
-int function()
+int openFile(char chemin[])
 {
     FILE* fichier = fopen(chemin, "r");
     if (fichier == NULL){
@@ -99,6 +98,6 @@ remplirClient("Melvyn","Delpree","Villes","0000000000","melvyn2701@gmail.com","e
 affiche(client);
 modifieClient("Luka", 0, client, 0);
 affiche(client);
-function();
+printf("%d",openFile("annuaire_numerique.csv"));
 return 0;
 }
