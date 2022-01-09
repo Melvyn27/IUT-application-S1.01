@@ -4,7 +4,7 @@
 #include "header.h"
 
 int recherche(struct abonne client[], char prenom[]){
-int i;
+    int i;
 /*if (client[0].prenom == "trie"){
 int inf = 1;
 int milieu = (size-1)/2
@@ -13,11 +13,12 @@ while (prenom != client[milieu].prenom){
 }
 }*/
 
-for (i=1; i<size-1; i++){
-printf("%s, %s ",prenom, client[i].prenom);
-if(prenom == client[i].prenom){
-return i;
-}
-}
-return 0;
+    for (i=1; i<size; i++){
+        printf("%s, %s ",prenom, client[i].prenom);
+        if(prenom == client[i].prenom){
+            affiche_client(client, i);
+            return i;
+        }
+    }
+    return 0;
 }

@@ -27,7 +27,7 @@ remplirClient("Liam", "Luka", "Lyon", "0000000000", "liamlucas@wanadoo.fr", "él
 affiche_all(client, 1);
 modifieClient("Lucas", 1, client, 2);
 affiche_all(client, 1);
-if (recherche(client, "Melvyn") == 0){
+if (recherche(client, "Melvyn") != 0){
 affiche_client(client, recherche(client, "Melvyn"));
 }
 return 0;
