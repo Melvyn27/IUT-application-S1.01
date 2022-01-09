@@ -3,4 +3,4 @@ project(IUT-application-S1.01)
 
 set(CMAKE_STANDARD 99)
 
-add_executable(ahhhhhhhhh main.c affiche.c donnee.c)
+add_executable(ahhhhhhhhh main.c affiche.c donnee.c sort.c recherche.c)
