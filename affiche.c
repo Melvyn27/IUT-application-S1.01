@@ -25,8 +25,7 @@ printf("%s\n", client[i].profession);
 
 
 void affiche_client(struct abonne client[], int n){
-printf("\n");
-printf("%s, ", client[n].prenom);
+printf("\n%s, ", client[n].prenom);
 printf("%s, ", client[n].nom);
 printf("%s, ", client[n].adresse);
 printf("%s, ", client[n].numTel);
