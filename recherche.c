@@ -3,10 +3,21 @@
 #include <stdio.h>
 #include "header.h"
 
+
+int recherche_dico(struct abonne client[], char prenom[]){
+    return -1;
+}
+
+
 int recherche(struct abonne client[], char prenom[]){
+    /*
+    if (strcmp(client[0].prenom, "sorted") == 0){
+        return recherche_dico(client, prenom);
+    }*/
     int i;
     for (i=1; i<3; i++){
-        if(prenom == client[i+1].prenom){
+        printf("%s, %s\n", client[i].prenom, prenom);
+        if(strcmp(client[i].prenom, prenom) == 0){
             affiche_client(client, i);
             return i;
         }

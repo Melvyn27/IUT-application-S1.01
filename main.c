@@ -7,9 +7,11 @@
 
 int main(){
     struct abonne client[size];
+    char temp[20][size];
     char commande[100];
     float temps;
     clock_t t1, t2;
+    remplirClient("none","none","none","none","none","none", client, 0);
     remplirClient("Melvyn","Delpree","Villes","0000000000","melvyn2701@gmail.com","etudiant", client, 1);
     remplirClient("Liam", "Luka", "Lyon", "0000000000", "liamlucas@wanadoo.fr", "éleveur de pommes de terre", client, 2);
     printf("Quelle est votre requette");
@@ -29,8 +31,12 @@ int main(){
             temps = (float)(t2-t1)/CLOCKS_PER_SEC;
             printf("temps = %f\n", temps);
         }
+        else if (strcmp(p, "tri") == 0){
+
+          triFusion(0, size-1, client, temp);
+          }
         else if (strcmp(p, "recherche") == 0){
-            printf("%d", recherche(client, "Liam\n"));
+            printf("%d", recherche(client, "Liam"));
             t2 = clock();
             temps = (float)(t2-t1)/CLOCKS_PER_SEC;
             printf("temps = %f\n", temps);
@@ -41,7 +47,7 @@ int main(){
                     temps = (float)(t2-t1)/CLOCKS_PER_SEC;
                     printf("temps = %f\n", temps);
         }
-        else if (strcmp(commande, "exit") == 0){
+        else if (strcmp(commande, "exit") == 0 || strcmp(commande, "close") == 0 || strcmp(commande, "end") == 0){
             return 0;
         }
         else printf("commande inconue\n\n");
