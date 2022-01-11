@@ -25,10 +25,5 @@ void affiche_all(struct abonne client[], int tri){
 
 
 void affiche_client(struct abonne client[], int n){
-    printf("\n%s, ", client[n].prenom);
-    printf("%s, ", client[n].nom);
-    printf("%s, ", client[n].adresse);
-    printf("%s, ", client[n].numTel);
-    printf("%s, ", client[n].adresseMail);
-    printf("%s\n", client[n].profession);
+    printf("\n%s, %s, %s, %s, %s, %s\n", client[n].prenom, client[n].nom, client[n].adresse, client[n].numTel, client[n].adresseMail, client[n].profession);
 }

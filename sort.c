@@ -28,6 +28,7 @@ void echange(struct abonne client[], int a, int b){
     strcpy(temp, client[a].profession);
     strcpy(client[a].profession, client[b].profession);
     strcpy(client[b].profession, temp);
+
 }
 
 void tri(struct abonne client[]){
@@ -35,9 +36,8 @@ void tri(struct abonne client[]){
     char temp[20];
     for (i=0 ; i < size-1; i++){
         for (j=0 ; j < size-i-1; j++){
-            printf("\n%s, %s -> %d", client[j].prenom, client[j+1].prenom, strcmp(client[j].prenom, client[j+1].prenom));
             if (strcmp(client[j].prenom, client[j+1].prenom) > 0){
-                echange(client, j, j+1);
+                echange(client, j+1, j);
             }
         }
     }

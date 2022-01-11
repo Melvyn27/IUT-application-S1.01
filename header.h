@@ -1,6 +1,6 @@
 #ifndef IUT_APPLICATION_S1_01_HEADER_H
 #define IUT_APPLICATION_S1_01_HEADER_H
-#define size 2
+#define size 4
 
 #endif //IUT_APPLICATION_S1_01_HEADER_H
 
@@ -12,7 +12,7 @@ typedef struct abonne
     char adresse[40];
     char numTel[20];
     char adresseMail[50];
-    char profession[20];
+    char profession[100];
 } ABONNE;
 
 void affiche_all(struct abonne client[], int tri);
