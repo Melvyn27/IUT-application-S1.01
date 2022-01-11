@@ -13,7 +13,7 @@ void affiche_all(struct abonne client[], int tri){
     if (tri == 1) triListe(client);
     int i;
     printf("\n\n");
-    for (i=1; i<size; i++){
+    for (i=0; i<size; i++){
         printf("%s, ", client[i].prenom);
         printf("%s, ", client[i].nom);
         printf("%s, ", client[i].adresse);

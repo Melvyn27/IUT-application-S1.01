@@ -1,6 +1,7 @@
 #ifndef IUT_APPLICATION_S1_01_HEADER_H
 #define IUT_APPLICATION_S1_01_HEADER_H
-#define size 3
+#define size 2
+
 #endif //IUT_APPLICATION_S1_01_HEADER_H
 
 
@@ -21,4 +22,4 @@ void remplirClient(char prenom[20], char nom[20], char adresse[40], char numTel[
 void modifieClient(char donnee[], int type, struct abonne client[], int n);
 int recherche(struct abonne client[], char prenom[]);
 int openFile(char chemin[]);
-void triFusion(int i, int j, struct abonne client[], int tmp[][]);
+void tri(struct abonne client[]);

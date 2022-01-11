@@ -7,13 +7,11 @@
 
 int main(){
     struct abonne client[size];
-    char temp[20][size];
     char commande[100];
     float temps;
     clock_t t1, t2;
-    remplirClient("none","none","none","none","none","none", client, 0);
-    remplirClient("Melvyn","Delpree","Villes","0000000000","melvyn2701@gmail.com","etudiant", client, 1);
-    remplirClient("Liam", "Luka", "Lyon", "0000000000", "liamlucas@wanadoo.fr", "éleveur de pommes de terre", client, 2);
+    remplirClient("Melvyn","Delpree","Villes","0000000000","melvyn2701@gmail.com","etudiant", client, 0);
+    remplirClient("Liam", "Luka", "Lyon", "0000000000", "liamlucas@wanadoo.fr", "eleveur de pommes de terre", client, 1);
     printf("Quelle est votre requette");
     while (0<4){
         scanf("%s", commande);
@@ -32,9 +30,8 @@ int main(){
             printf("temps = %f\n", temps);
         }
         else if (strcmp(p, "tri") == 0){
-
-          triFusion(0, size-1, client, temp);
-          }
+          tri(client);
+        }
         else if (strcmp(p, "recherche") == 0){
             printf("%d", recherche(client, "Liam"));
             t2 = clock();

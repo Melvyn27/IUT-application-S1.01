@@ -3,32 +3,43 @@
 #include <stdio.h>
 #include "header.h"
 
+void echange(struct abonne client[], int a, int b){
+    char temp[50];
+    strcpy(temp, client[a].prenom);
+    strcpy(client[a].prenom, client[b].prenom);
+    strcpy(client[b].prenom, temp);
 
-void triFusion(int i, int j, struct abonne client[], char tmp[][]) {
-    if(j <= i){ return;}
-    int m = (i + j) / 2;
-    triFusion(i, m, client, tmp);     //trier la moitié gauche récursivement
-    triFusion(m + 1, j, client, tmp); //trier la moitié droite récursivement
-    int pg = i;     //pg pointe au début du sous-tableau de gauche
-    int pd = m + 1; //pd pointe au début du sous-tableau de droite
-    int c;          //compteur
-// on boucle de i à j pour remplir chaque élément du tableau final fusionné
-    for(c = i; c <= j; c++) {
-        if(pg == m + 1) { //le pointeur du sous-tableau de gauche a atteint la limite
-            tmp[c] = client[pd].prenom;
-            pd++;
-        }else if (pd == j + 1) { //le pointeur du sous-tableau de droite a atteint la limite
-            tmp[c] = client[pg].prenom;
-            pg++;
-        }else if (strcmp(client[pg].prenom, client[pd].prenom) < 0) { //le pointeur du sous-tableau de gauche pointe vers un élément plus petit
-            tmp[c] = client[pg].prenom;
-            pg++;
-        }else {  //le pointeur du sous-tableau de droite pointe vers un élément plus petit
-            tmp[c] = client[pd].prenom;
-            pd++;
+    strcpy(temp, client[a].nom);
+    strcpy(client[a].nom, client[b].nom);
+    strcpy(client[b].nom, temp);
+
+    strcpy(temp, client[a].adresse);
+    strcpy(client[a].adresse, client[b].adresse);
+    strcpy(client[b].adresse, temp);
+
+    strcpy(temp, client[a].numTel);
+    strcpy(client[a].numTel, client[b].numTel);
+    strcpy(client[b].numTel, temp);
+
+    strcpy(temp, client[a].adresseMail);
+    strcpy(client[a].adresseMail, client[b].adresseMail);
+    strcpy(client[b].adresseMail, temp);
+
+    strcpy(temp, client[a].profession);
+    strcpy(client[a].profession, client[b].profession);
+    strcpy(client[b].profession, temp);
+}
+
+void tri(struct abonne client[]){
+    int i, j;
+    char temp[20];
+    for (i=0 ; i < size-1; i++){
+        for (j=0 ; j < size-i-1; j++){
+            printf("\n%s, %s -> %d", client[j].prenom, client[j+1].prenom, strcmp(client[j].prenom, client[j+1].prenom));
+            if (strcmp(client[j].prenom, client[j+1].prenom) > 0){
+                echange(client, j, j+1);
+            }
         }
     }
-    for(c = i; c <= j; c++) {  //copier les éléments de tmp[] à tab[]
-        client[c] = tmp[c];
-    }
+
 }
