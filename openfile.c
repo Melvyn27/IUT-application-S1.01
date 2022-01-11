@@ -10,9 +10,13 @@ int openFile(char chemin[])
     if (fichier == NULL){
         printf("\nFichier introuvable\n");
         int fclose(FILE *flux);
-        return 0;}
-    printf(fichier);
-        int fclose(FILE *flux);
+        return 0;
+    }
+    printf("test\n");
+    char temp[100];
+    while(!feof(fichier)){
+        fgets(temp, 99, fichier);
+        }
+    int fclose(FILE *flux);
     return 1;
 }
-

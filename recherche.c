@@ -6,15 +6,12 @@
 int recherche(struct abonne client[], char prenom[]){
     int i;
     for (i=1; i<3; i++){
-        printf("\ntest");
-        printf("%s, %s ",prenom, client[i].prenom);
-        if(prenom == client[i].prenom){
+        if(prenom == client[i+1].prenom){
             affiche_client(client, i);
-            printf("\n%d", i);
             return i;
         }
     }
-    return 0;
+    return -1;
 }
 
 /*if (client[0].prenom == "trie"){
