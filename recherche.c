@@ -7,44 +7,40 @@
 
 int rechercheprenom(struct abonne client[], char prenom[]){
     int i;
-    for (i=1; i<3; i++){
-        printf("%s, %s\n", client[i].prenom, prenom);
-        if(strcmp(client[i].prenom, prenom) == 0){
-            affiche_client(client, i);
-            return i;
+    for (i=1; i<size; i++){
+        if(strcmp(client[i-1].prenom, prenom) == 0){
+            printf("%d -->  ", (i-1));
+            affiche_client(client, i-1);
         }
     }
     return -1;
 }
 int recherchenom(struct abonne client[], char nom[]){
     int i;
-    for (i=1; i<3; i++){
-        printf("%s, %s\n", client[i].nom, nom);
-        if(strcmp(client[i].nom, nom) == 0){
-            affiche_client(client, i);
-            return i;
+    for (i=1; i<size; i++){
+        if(strcmp(client[i-1].nom, nom) == 0){
+            printf("%d -->  ", (i-1));
+            affiche_client(client, i-1);
         }
     }
     return -1;
 }
-int recherchenum(struct abonne client[], char num[]){
+int recherchenum(struct abonne client[], char numtel[]){
+     int i;
+     for (i=1; i<size; i++){
+         if(strcmp(client[i-1].numTel, numtel) == 0){
+             printf("%d -->  ", (i-1));
+             affiche_client(client, i-1);
+         }
+     }
+     return -1;
+ }
+int recherchemail(struct abonne client[], char mail[]){
     int i;
-    for (i=1; i<3; i++){
-        printf("%s, %s\n", client[i].numTel, num);
-        if(strcmp(client[i].numTel, num) == 0){
-            affiche_client(client, i);
-            return i;
-        }
-    }
-    return -1;
-}
-int recherchemail(struct abonne client[], char adresseMail[]){
-    int i;
-    for (i=1; i<3; i++){
-        printf("%s, %s\n", client[i].adresseMail, adresseMail);
-        if(strcmp(client[i].adresseMail, adresseMail) == 0){
-            affiche_client(client, i);
-            return i;
+    for (i=1; i<size; i++){
+        if(strcmp(client[i-1].adresseMail, mail) == 0){
+            printf("%d -->  ", (i-1));
+            affiche_client(client, i-1);
         }
     }
     return -1;
