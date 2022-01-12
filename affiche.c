@@ -4,6 +4,7 @@
 #include "header.h"
 
 void affiche_all(struct abonne client[], int sorted){
+    printf("\n\n");
     if (sorted == 1){
         triprenom(client);
     }
@@ -23,7 +24,6 @@ void affiche_all(struct abonne client[], int sorted){
         tripro(client);
     }
     int i;
-    printf("\n\n");
     for (i=0; i<size; i++){
         printf("%s, ", client[i].prenom);
         printf("%s, ", client[i].nom);

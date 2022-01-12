@@ -34,21 +34,9 @@ void requete(char arg1[], char arg2[], char arg3[], struct abonne client[]){
         printf("%d", openFile(arg2, client));
     }
     if (strcmp(arg1, "add") == 0){
-        char * arg = strtok ( temp, ",");
-        strcpy(prenom, arg);
-        arg = strtok ( NULL, ",");
-        strcpy(nom, arg);
-        arg = strtok ( NULL, ",");
-        strcpy(ville, arg);
-        arg = strtok ( NULL, ",");
-        strcpy(codePostal, arg);
-        arg = strtok ( NULL, ",");
-        strcpy(numTel, arg);
-        arg = strtok ( NULL, ",");
-        strcpy(mail, arg);
-        arg = strtok ( NULL, ",");
-        strcpy(profession, arg);
-        strcat(ville, codePostal);
-        remplirClient(prenom, nom, ville, numTel, mail, profession, client, i);
+        add_client(client);
     }
 }
+
+/*fprintf(add_abonnee,"%s,%s,%s,%s,%s,%s,%s\n", nom, prenom, ville, codePostal, numTel, adresseMail, profession);
+          fclose(add_abonnee);*/

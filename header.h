@@ -32,3 +32,4 @@ void trinum(struct abonne client[]);
 void trimail(struct abonne client[]);
 void tripro(struct abonne client[]);
 void requete(char arg1[], char arg2[], char arg3[], struct abonne client[]);
+void add_client(struct abonne client[]);

@@ -19,7 +19,6 @@ int main(){
         strcpy(arg2, arg);
         arg = strtok ( NULL, "-");
         strcpy(arg3, arg);
-        printf("%s, %s, %s", arg1, arg2, arg3);
         if (strcmp(arg1, "exit") == 0 || strcmp(arg1, "close") == 0 || strcmp(arg1, "end") == 0){
             return 0;
         }

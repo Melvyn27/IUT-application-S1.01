@@ -6,7 +6,7 @@
 
 int openFile(char chemin[], struct abonne client[]){
     char prenom[50], nom[50], ville[50], codePostal[50], numTel[50], mail[50], profession[50];
-    int i = 0;
+    int i = -1;
     FILE* fichier = fopen(chemin, "r");
     if (fichier == NULL){
         printf("\nFichier introuvable\n");
@@ -15,26 +15,27 @@ int openFile(char chemin[], struct abonne client[]){
     }
     char temp[1000];
     while(!feof(fichier)){
-        printf("test\n");
-        fgets(temp, 200, fichier);
-        char * arg = strtok ( temp, ",");
-        strcpy(prenom, arg);
-        arg = strtok ( NULL, ",");
-        strcpy(nom, arg);
-        arg = strtok ( NULL, ",");
-        strcpy(ville, arg);
-        arg = strtok ( NULL, ",");
-        strcpy(codePostal, arg);
-        arg = strtok ( NULL, ",");
-        strcpy(numTel, arg);
-        arg = strtok ( NULL, ",");
-        strcpy(mail, arg);
-        arg = strtok ( NULL, ",");
-        strcpy(profession, arg);
+        i=i+1;
+        affiche_all(client, 0);
+        fgets(temp, 1000, fichier);
+        char * champ = strtok ( temp, ",");
+        strcpy(prenom, champ);
+        champ = strtok ( NULL, ",");
+        strcpy(nom, champ);
+        champ = strtok ( NULL, ",");
+        strcpy(ville, champ);
+        champ = strtok ( NULL, ",");
+        strcpy(codePostal, champ);
+        champ = strtok ( NULL, ",");
+        strcpy(numTel, champ);
+        champ = strtok ( NULL, ",");
+        strcpy(mail, champ);
+        champ = strtok ( NULL, ",");
+        strcpy(profession, champ);
         strcat(ville, codePostal);
         remplirClient(prenom, nom, ville, numTel, mail, profession, client, i);
-        i=i+1;
     }
+    printf("close");
     int fclose(FILE *flux);
     return 1;
 }
