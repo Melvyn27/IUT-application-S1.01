@@ -3,14 +3,25 @@
 #include <stdio.h>
 #include "header.h"
 
-
-void triListe (struct abonne client[]){
-    printf("\nliste trié");
-}
-
-
-void affiche_all(struct abonne client[], int tri){
-    if (tri == 1) triListe(client);
+void affiche_all(struct abonne client[], int sorted){
+    if (sorted == 1){
+        triprenom(client);
+    }
+    if (sorted == 2){
+        trinom(client);
+    }
+    if (sorted == 3){
+        triadresse(client);
+    }
+    if (sorted == 4){
+        trinum(client);
+    }
+    if (sorted == 5){
+        trimail(client);
+    }
+    if (sorted == 6){
+        tripro(client);
+    }
     int i;
     printf("\n\n");
     for (i=0; i<size; i++){

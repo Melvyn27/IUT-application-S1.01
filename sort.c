@@ -31,12 +31,72 @@ void echange(struct abonne client[], int a, int b){
 
 }
 
-void tri(struct abonne client[]){
+void triprenom(struct abonne client[]){
     int i, j;
     char temp[20];
     for (i=0 ; i < size-1; i++){
         for (j=0 ; j < size-i-1; j++){
             if (strcmp(client[j].prenom, client[j+1].prenom) > 0){
+                echange(client, j+1, j);
+            }
+        }
+    }
+
+}
+void trinom(struct abonne client[]){
+    int i, j;
+    char temp[20];
+    for (i=0 ; i < size-1; i++){
+        for (j=0 ; j < size-i-1; j++){
+            if (strcmp(client[j].nom, client[j+1].nom) > 0){
+                echange(client, j+1, j);
+            }
+        }
+    }
+
+}
+void triadresse(struct abonne client[]){
+    int i, j;
+    char temp[20];
+    for (i=0 ; i < size-1; i++){
+        for (j=0 ; j < size-i-1; j++){
+            if (strcmp(client[j].adresse, client[j+1].adresse) > 0){
+                echange(client, j+1, j);
+            }
+        }
+    }
+
+}
+void trinum(struct abonne client[]){
+    int i, j;
+    char temp[20];
+    for (i=0 ; i < size-1; i++){
+        for (j=0 ; j < size-i-1; j++){
+            if (strcmp(client[j].numTel, client[j+1].numTel) > 0){
+                echange(client, j+1, j);
+            }
+        }
+    }
+
+}
+void trimail(struct abonne client[]){
+    int i, j;
+    char temp[20];
+    for (i=0 ; i < size-1; i++){
+        for (j=0 ; j < size-i-1; j++){
+            if (strcmp(client[j].adresseMail, client[j+1].adresseMail) > 0){
+                echange(client, j+1, j);
+            }
+        }
+    }
+
+}
+void tripro(struct abonne client[]){
+    int i, j;
+    char temp[20];
+    for (i=0 ; i < size-1; i++){
+        for (j=0 ; j < size-i-1; j++){
+            if (strcmp(client[j].profession, client[j+1].profession) > 0){
                 echange(client, j+1, j);
             }
         }

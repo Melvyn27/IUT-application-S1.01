@@ -4,16 +4,8 @@
 #include "header.h"
 
 
-int recherche_dico(struct abonne client[], char prenom[]){
-    return -1;
-}
 
-
-int recherche(struct abonne client[], char prenom[]){
-    /*
-    if (strcmp(client[0].prenom, "sorted") == 0){
-        return recherche_dico(client, prenom);
-    }*/
+int rechercheprenom(struct abonne client[], char prenom[]){
     int i;
     for (i=1; i<3; i++){
         printf("%s, %s\n", client[i].prenom, prenom);
@@ -24,11 +16,36 @@ int recherche(struct abonne client[], char prenom[]){
     }
     return -1;
 }
-
-/*if (client[0].prenom == "trie"){
-int inf = 1;
-int milieu = (size-1)/2
-sup = size-1
-while (prenom != client[milieu].prenom){
+int recherchenom(struct abonne client[], char nom[]){
+    int i;
+    for (i=1; i<3; i++){
+        printf("%s, %s\n", client[i].nom, nom);
+        if(strcmp(client[i].nom, nom) == 0){
+            affiche_client(client, i);
+            return i;
+        }
+    }
+    return -1;
 }
-}*/
+int recherchenum(struct abonne client[], char num[]){
+    int i;
+    for (i=1; i<3; i++){
+        printf("%s, %s\n", client[i].numTel, num);
+        if(strcmp(client[i].numTel, num) == 0){
+            affiche_client(client, i);
+            return i;
+        }
+    }
+    return -1;
+}
+int recherchemail(struct abonne client[], char adresseMail[]){
+    int i;
+    for (i=1; i<3; i++){
+        printf("%s, %s\n", client[i].adresseMail, adresseMail);
+        if(strcmp(client[i].adresseMail, adresseMail) == 0){
+            affiche_client(client, i);
+            return i;
+        }
+    }
+    return -1;
+}

@@ -43,7 +43,7 @@ void setDonnee(char donnee[], int type, struct abonne client[], int n){
     }
 }
 
-void remplirClient(char prenom[20], char nom[20], char adresse[40], char numTel[20], char adresseMail[50], char profession[20], struct abonne client[], int n){
+void remplirClient(char prenom[50], char nom[50], char adresse[50], char numTel[50], char adresseMail[50], char profession[50], struct abonne client[], int n){
     setDonnee(prenom, 0, client, n);
     setDonnee(nom, 1, client, n);
     setDonnee(adresse, 2, client, n);
