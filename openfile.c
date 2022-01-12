@@ -16,26 +16,45 @@ int openFile(char chemin[], struct abonne client[]){
     char temp[1000];
     while(!feof(fichier)){
         i=i+1;
-        affiche_all(client, 0);
         fgets(temp, 1000, fichier);
         char * champ = strtok ( temp, ",");
+        if (champ == NULL){
+            strcpy(prenom, "null");
+        }
         strcpy(prenom, champ);
         champ = strtok ( NULL, ",");
+        if (champ == NULL){
+            strcpy(prenom, "null");
+        }
         strcpy(nom, champ);
         champ = strtok ( NULL, ",");
+        if (champ == NULL){
+            strcpy(prenom, "null");
+        }
         strcpy(ville, champ);
         champ = strtok ( NULL, ",");
+        if (champ == NULL){
+            strcpy(prenom, "null");
+        }
         strcpy(codePostal, champ);
         champ = strtok ( NULL, ",");
+        if (champ == NULL){
+            strcpy(prenom, "null");
+        }
         strcpy(numTel, champ);
         champ = strtok ( NULL, ",");
+        if (champ == NULL){
+            strcpy(prenom, "null");
+        }
         strcpy(mail, champ);
         champ = strtok ( NULL, ",");
+        if (champ == NULL){
+            strcpy(prenom, "null");
+        }
         strcpy(profession, champ);
         strcat(ville, codePostal);
-        remplirClient(prenom, nom, ville, numTel, mail, profession, client, i);
+        remplirClient(prenom, nom, ville, numTel, mail, profession, client, 10);
     }
-    printf("close");
     int fclose(FILE *flux);
     return 1;
 }

@@ -25,7 +25,7 @@ void add_client(struct abonne client[]){
         scanf("%s", profession);
 
         strcat(ville, codePostal);
-        remplirClient(nom, prenom, ville, numTel, adresseMail, profession, client, 1);
+        remplirClient(nom, prenom, ville, numTel, adresseMail, profession, client, 10);
 
         printf("\n Voulez-vous effectuer d'autre enregistrement ? Oui(O) / Non(N)\n");
         scanf("%s", rep);
