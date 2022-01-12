@@ -74,7 +74,7 @@ void remplirClient(char prenom[20], char nom[20], char adresse[20], char numTel[
         mot=0;
     }
 
-void add_client(){
+void add_client(){                  // Vanessa
 
     char nom[20];
     char prenom[30];
@@ -88,7 +88,7 @@ void add_client(){
     do{
         fflush(stdin);
         printf("Entrer le nom :\n");
-        scanf("%s", &nom);
+        gets(nom);
         printf("Entrer le prenom :\n");
         gets(prenom);
         printf("Entrer la adresse :\n");
