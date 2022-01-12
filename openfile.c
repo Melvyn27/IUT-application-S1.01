@@ -53,7 +53,7 @@ int openFile(char chemin[], struct abonne client[]){
         }
         strcpy(profession, champ);
         strcat(ville, codePostal);
-        remplirClient(prenom, nom, ville, numTel, mail, profession, client, 10);
+        remplirClient(prenom, nom, ville, numTel, mail, profession, client, i);
     }
     int fclose(FILE *flux);
     return 1;

@@ -6,9 +6,11 @@
 void add_client(struct abonne client[]){
 
     char nom[50], prenom[50], ville[50], codePostal[50], numTel[50], adresseMail[50], profession[50], rep[10];
-
+    int n;
     do{
         fflush(stdin);
+        printf("\nEntrer l'indice du client :\n");
+        scanf("%d", &n);
         printf("\nEntrer le nom :\n");
         scanf("%s", nom);
         printf("Entrer le prenom :\n");
@@ -25,7 +27,7 @@ void add_client(struct abonne client[]){
         scanf("%s", profession);
 
         strcat(ville, codePostal);
-        remplirClient(nom, prenom, ville, numTel, adresseMail, profession, client, 10);
+        remplirClient(nom, prenom, ville, numTel, adresseMail, profession, client, n);
 
         printf("\n Voulez-vous effectuer d'autre enregistrement ? Oui(O) / Non(N)\n");
         scanf("%s", rep);

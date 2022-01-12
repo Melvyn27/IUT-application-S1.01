@@ -1,6 +1,6 @@
 #ifndef IUT_APPLICATION_S1_01_HEADER_H
 #define IUT_APPLICATION_S1_01_HEADER_H
-#define size 10
+#define size 5100
 
 #endif //IUT_APPLICATION_S1_01_HEADER_H
 
