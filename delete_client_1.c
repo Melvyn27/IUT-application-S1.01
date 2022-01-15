@@ -3,7 +3,7 @@
 #include <string.h>
 
 
-int main (){
+void delete_client(char){
 
     FILE *Fic, *FicResult;
 
