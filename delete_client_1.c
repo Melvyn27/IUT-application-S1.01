@@ -3,7 +3,7 @@
 #include <string.h>
 
 
-void delete_client(char){
+void delete_client(char adresseMail[]){
 
     FILE *Fic, *FicResult;
 
@@ -12,15 +12,14 @@ void delete_client(char){
     char ville[30];
     char codePostal[5];
     char numTel[20];
-    char adresseMail[50];
     char profession[20];
     char mailSup[50];
 
 
-    if(NULL == (Fic = fopen ("annuaire5000", "r")))
-    return -1;
-    if(NULL == (FicResult = fopen ("annuaire5000_resultat", "w")))
-    return -1;
+    if(NULL == (Fic = fopen ("annuaire5000.csv", "r")))
+    exit(1);
+    if(NULL == (FicResult = fopen ("annuaire5000_resultat.csv", "w")))
+    exit(1);
 
     printf ("Suppression de client\n");
     printf ("\nSaississez l'adresse mail du client à supprimer\n");
@@ -31,5 +30,4 @@ void delete_client(char){
           fprintf(FicResult, "%s %s %s %s %s %s %s", nom, prenom, ville, codePostal, numTel, adresseMail, profession);
     fclose(Fic);
     fclose(FicResult);
-    return 0;
 }
